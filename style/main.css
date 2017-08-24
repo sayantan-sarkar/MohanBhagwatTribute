@@ -1,10 +1,10 @@
 #main-panel{
-	background-color: #111111
+	background-color: #E1E1E1
 }
 
 blockquote{
   display:block;
-  background: #fff;
+  background: #FFFFFF;
   padding: 15px 20px 15px 45px;
   margin: 0 0 20px;
   position: relative;
@@ -17,9 +17,8 @@ blockquote{
   text-align: justify;
   
   /*Borders - (Optional)*/
-  border-left: 15px solid #c76c0c;
-  border-right: 2px solid #c76c0c;
-  
+  border-left: 15px solid #000;
+   
   /*Box Shadow - (Optional)*/
   -moz-box-shadow: 2px 2px 15px #ccc;
   -webkit-box-shadow: 2px 2px 15px #ccc;
