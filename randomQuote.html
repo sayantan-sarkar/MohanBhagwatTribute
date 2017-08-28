@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Comic Generator</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/randomQuote.css">
+    <!-- Optional Bootstrap theme -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+    	$(document).ready(function() {
+    		$("#newComic").on("click", function(){
+    			//http://dynamic.xkcd.com/api-0/jsonp/comic/?callback=?
+      			$.getJSON("http://www.smbc-comics.com/?id=3216", function(json) {
+      				var maxComic = json.num;
+      				var comicNum = Math.ceil(Math.random()*maxComic);
+      				$.getJSON("http://dynamic.xkcd.com/api-0/jsonp/comic/"+comicNum+"?callback=?", function(newjson) {
+      					var html = "<img class='img-responsive' src='"+newjson.img+"' alt='"+newjson.alt+"'></img>";
+      					$(".comicImage").html(html);
+      				});
+    		});
+  		});
+    	});
+    </script>
+</head>
+
+<body>
+	<div  class="container">
+	<div class="row">
+   		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   		<h1 class="text-center">Random Comics</h1>
+   		<h3 class="text-center">This is a randomizer to get random comics from following favourite sources</h3>
+   		</div>
+   		</div>
+
+   	<div class="row">
+   		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+   		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+   		<ul>
+   		<li><h3><a href="https://xkcd.com">XKCD</a></h3></li>
+   		<li><h3><a href="http://www.smbc-comics.com">SMBC-Comics</a></h3></li>
+   		</ul></h3>
+   		</div>
+   		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+   		</div>
+
+   	<div class="row">
+   		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+   		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+   		<button id = "newComic" class = "btn btn-primary btn-block">
+        <h2>Generate Comics</h2>
+      	</button></div>
+      	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+      </div>
+
+    <div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    	<div class="comicImage">
+    	 </div>
+    	 </div>
+    </div>
+
+
+
+
+	</div>
+</body>
+</html>
