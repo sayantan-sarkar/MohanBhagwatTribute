@@ -1,46 +1,30 @@
+@font-face {
+  font-family: 'AmaticSC-Regular';
+  src: url('/fonts/amaticsc-regular-webfont.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url('/fonts/AmaticSC-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
+
 body{
-  background-image: url("/images/vintage-concrete.png");
+  background-image: url("/images/comicWallpaper.jpg");
+  font-family: AmaticSC-Regular, Georgia,Times New Roman,serif;
 }
 
-blockquote{
-  display:block;
-  background: #FFFFFF;
-  padding: 15px 20px 15px 45px;
-  margin: 0 0 20px;
-  position: relative;
-  
-  /*Font*/
-  font-family: Georgia, serif;
-  font-size: 16px;
-  line-height: 1.2;
-  color: #666;
-  text-align: justify;
-  
-  /*Borders - (Optional)*/
-  border-left: 15px solid #000;
-   
-  /*Box Shadow - (Optional)*/
-  -moz-box-shadow: 2px 2px 15px #ccc;
-  -webkit-box-shadow: 2px 2px 15px #ccc;
-  box-shadow: 2px 2px 15px #ccc;
+h1{
+  font-size: 80px;
 }
 
-blockquote::before{
-  content: "\201C"; /*Unicode for Left Double Quote*/
-  
-  /*Font*/
-  font-family: Georgia, serif;
-  font-size: 60px;
-  font-weight: bold;
-  color: #999;
-  
-  /*Positioning*/
-  position: absolute;
-  left: 10px;
-  top:5px;
+h2{
+  font-size: 50px;
 }
 
-blockquote::after{
-  /*Reset to make sure*/
-  content: "";
+h3{
+  font-size: 30px;
+}
+
+.row{
+  margin-top: 10px;
+}
+
+a {
+    color: hotpink;
 }
