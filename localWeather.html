@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/localWeather.css">
+    <link href='https://fonts.googleapis.com/css?family=Fertigo' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Optional Bootstrap theme -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+    	$(document).ready(function() {
+        errorHTML = "<h1>ERROR!</h1>"
+    		if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(function(position){
+            console.log(position.coords.latitude);
+            $.ajax({dataType: "json", url: "https://fcc-weather-api.glitch.me/api/current?lat="+position.coords.latitude+"&lon="+position.coords.longitude, success : function(json) {
+                $('.location').html(getLocationHtml(json));
+              }});
+          });
+        }else{
+          console.log("dadf");
+        }
+    	});
+      function getLocationHtml(loc){
+        var img = "/icons/weatherLoc.png";
+        var html="";
+        html+="";
+        html+="<h3 class='text-center'><i class='material-icons'>my_location</i>"+loc.name+"</h3>";
+        html+="<h3 class='text-center'><i class='material-icons'>arrow_forward</i>"+loc.coord.lat+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class='material-icons'>arrow_upward</i>"+loc.coord.lon+"</h3>";
+        return(html)
+      }
+    </script>
+</head>
+
+<body>
+	<div  class="container">
+	<div class="row">
+   		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   		<h1 class="text-center"><b>Weather App</b></h1>
+   		<h3 class="text-center">Your local weather</h3>
+      <div class="location"></div>
+   		</div>
+   		</div>
+
+	</div>
+</body>
+</html>
