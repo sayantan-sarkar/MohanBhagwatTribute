@@ -7,7 +7,9 @@
 body{
   background-image: url("/images/comicWallpaper.jpg");
   font-family: AmaticSC-Regular, Georgia,Times New Roman,serif;
+  background-size:  cover;
 }
+
 
 h1{
   font-size: 80px;
@@ -19,6 +21,7 @@ h2{
 
 h3{
   font-size: 30px;
+  height: 30px;
 }
 
 .row{
@@ -28,3 +31,12 @@ h3{
 a {
     color: hotpink;
 }
+ .h3Icon{
+  height: 30px;
+ }
+
+ #tempUnit{
+  color: #8533ff;
+  font-weight: bold;
+ }
+
