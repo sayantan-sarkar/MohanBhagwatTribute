@@ -11,10 +11,69 @@ body{
     transform: translate(-50%, -50%);
 }
 
+.searchbox{
+	position:relative;
+    min-width:50px;
+    width:0%;
+    height:60px;
+    float:right;
+    overflow:hidden;
+    
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    -ms-transition: width 0.3s;
+    -o-transition: width 0.3s;
+    transition: width 0.3s;
+}
+
 .searchHere {
     border-radius: 30px 30px 30px 30px;
    	background-color: #511111;
    	border-color: orange;
    	border-width: 3px;
+   	height:60px;
+   	width:100%;
+   	z-index:-1;
 }
+
+.searchbox-submit,
+.searchIcon{
+	height:60px;
+   	width:60px;
+   	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 60px;
+	text-align: center;
+	background-color: #511111;
+	z-index:100;
+}
+
+.searchbox-submit{
+	z-index:-1;
+}
+
+.searchbox-open{
+    width:100%;
+}
+
+.searchHere::-webkit-input-placeholder {
+	color: orange;
+}
+
+.searchHere:-moz-placeholder {
+	color: orange;
+}
+
+.searchHere::-moz-placeholder {
+	color: orange;
+}
+
+.searchHere:-ms-input-placeholder {
+	color: orange;
+}
+
 
