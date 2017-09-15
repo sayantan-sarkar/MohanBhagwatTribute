@@ -3,6 +3,7 @@ $(document).ready(function(){
 	var wikiSearchURL = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=";
 	var callback = "&callback=JSON_CALLBACK";
 	$('.jumbo2').hide();
+	var wikiArticleUrl = "http://en.wikipedia.org/?curid=";
 
 	$('.searchIcon').click(function(){
 		if(isOpen == false){
@@ -28,12 +29,12 @@ $(document).ready(function(){
 			$('.jumbo2').css('top','75%');
 			$('.jumbo2').hide();
 			isOpen = false;
+			$('.searchHere').val("");
 		}
 	})
 
 	$("form").submit(function(e){
 		e.preventDefault();
-		console.log($('.searchHere').val())
     	$.ajax({dataType: "jsonp", 
     		url: wikiSearchURL+$('.searchHere').val()+callback, 
     		success : function(json){
@@ -54,9 +55,17 @@ $(document).ready(function(){
     	});
     });
 
-	$('.well').on("click",function(e) {
-		e.preventDefault();
-   		alert(this.id);
+	$('.jumbo2').on("click",".well",function(e) {
+   		var win = window.open(wikiArticleUrl+this.id, '_blank');
+  		win.focus();
+	});
+
+	$('.jumbo2').on("mouseover",".well",function(e) {
+   		$("#"+this.id).css("cssText", "border-left: solid orange 5px !important");
+	});
+
+	$('.jumbo2').on("mouseout",".well",function(e) {
+   		$("#"+this.id).css("cssText", "border-left: none");
 	});
 
 	});
