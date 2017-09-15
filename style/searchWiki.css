@@ -2,13 +2,28 @@ body{
   background-color: #511111;
 }
 
-.jumbotron {
+.jumbo1 {
 	background-color: #511111;
 	color: #ffffff;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
+}
+
+.jumbo2{
+	background-color: #511111;
+	color: #ffffff;
+	position: absolute;
+	width: 100%;
+	top: 75%;
+    left: 0%;
+    padding: 1px;
+    color: #511111;s
+}
+
+.well{
+	position: relative;
 }
 
 .searchbox{
@@ -36,7 +51,17 @@ body{
    	z-index:-1;
 }
 
+input.searchHere {
+    color:orange;
+}
+
+input:focus {
+  	border-color: orange;
+   	border-width: 3px;
+}
+
 .searchbox-submit,
+.cancelIcon,
 .searchIcon{
 	height:60px;
    	width:60px;
@@ -54,6 +79,21 @@ body{
 
 .searchbox-submit{
 	z-index:-1;
+	display:none;
+}
+
+.cancelIcon{
+	z-index:-1;
+	background-color: transparent;
+}
+
+.searchIcon{
+
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
 }
 
 .searchbox-open{
